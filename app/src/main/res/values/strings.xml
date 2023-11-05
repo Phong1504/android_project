@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MucsicApp</string>
+    <string name="slogan">"The human voice is the most beautiful instrument of all, but the most difficult to play." </string>
+    <string name="slogan_owner">Richard Strauss</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
