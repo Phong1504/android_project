@@ -1,6 +1,7 @@
 package com.example.mucsicapp.Activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -36,11 +37,12 @@ public class DangNhap_DangKy extends AppCompatActivity {
     }
 
     private void DangNhapVaoApp(){
-        Intent iDangNhap = new Intent(DangNhap_DangKy.this, DangNhapActivity.class);
-        startActivity(iDangNhap);
+            Intent iDangNhap = new Intent(DangNhap_DangKy.this, DangNhapActivity.class);
+            startActivity(iDangNhap);
     }
     private void DangKyTaiKhoan(){
         Intent iDangKy = new Intent(DangNhap_DangKy.this, DangKyActivity.class);
         startActivity(iDangKy);
     }
+
 }
