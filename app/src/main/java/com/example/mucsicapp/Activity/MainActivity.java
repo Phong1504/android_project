@@ -3,6 +3,7 @@ package com.example.mucsicapp.Activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -31,13 +32,16 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if(item.getItemId() == R.id.trang_chu) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.container, trangchuFragment).commit();
+                    Intent intent = new Intent(MainActivity.this, trangchuFragment.getClass());
                     return true;
                 }else if(item.getItemId() == R.id.tim_kiem) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.container, timkiemFragment).commit();
+                    Intent intent = new Intent(MainActivity.this, timkiemFragment.getClass());
                     return true;
                 }else if(item.getItemId() == R.id.ca_nhan) {
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, canhanFragment).commit();
-                        return true;
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, canhanFragment).commit();
+                    Intent intent = new Intent(MainActivity.this, canhanFragment.getClass());
+                    return true;
                 }else
                     return false;
             };

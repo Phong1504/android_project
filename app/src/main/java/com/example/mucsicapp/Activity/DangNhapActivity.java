@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class DangNhapActivity extends AppCompatActivity {
     private EditText etTaiKhoan, etMatKhau;
-    private Button btndangnhap;
+    private Button btndangnhap, btnquenmtkhau;
     private CheckBox cbNho;
     SharedPreferences sharedPreferences;
     private FirebaseAuth fbaMusicApp;
@@ -36,6 +36,7 @@ public class DangNhapActivity extends AppCompatActivity {
             etTaiKhoan = findViewById(R.id.et_taikhoan);
             etMatKhau = findViewById(R.id.et_matkhau);
             btndangnhap = findViewById(R.id.btn_dang_nhap);
+            btnquenmtkhau = findViewById(R.id.btn_quen_mat_khau);
             cbNho = findViewById(R.id.cb_nhotaikhoan);
             sharedPreferences = getSharedPreferences("QuanliTaiKhoan.txt", MODE_PRIVATE);
             etTaiKhoan.setText(sharedPreferences.getString("TaiKhoan", ""));
@@ -49,17 +50,22 @@ public class DangNhapActivity extends AppCompatActivity {
                 }
             });
 
+           btnquenmtkhau.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {LayLaiMatKhau();}
+            });
+
     }
     private void DangNhap(){
         String sTaiKhoan, sMatKhau;
         sTaiKhoan = etTaiKhoan.getText().toString();
         sMatKhau = etMatKhau.getText().toString();
         if (TextUtils.isEmpty(sTaiKhoan)) {
-            Toast.makeText(this, "Vui lòng nhập email.", Toast.LENGTH_SHORT);
+            Toast.makeText(this, "Vui lòng nhập email.", Toast.LENGTH_SHORT).show();
             return;
         }
         if (TextUtils.isEmpty(sMatKhau)) {
-            Toast.makeText(this, "Vui lòng nhập mật khẩu.", Toast.LENGTH_SHORT);
+            Toast.makeText(this, "Vui lòng nhập mật khẩu.", Toast.LENGTH_SHORT).show();
             return;
         }
         fbaMusicApp.signInWithEmailAndPassword(sTaiKhoan, sMatKhau).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -86,6 +92,11 @@ public class DangNhapActivity extends AppCompatActivity {
             editor.putBoolean("NhoThongTinTaiKhoan", status);
         }
         editor.commit();
+    }
+
+    public void LayLaiMatKhau(){
+        Intent iLayLaiMatKhau = new Intent(DangNhapActivity.this, LayLaiMatKhauActivity.class);
+        startActivity(iLayLaiMatKhau);
     }
 
 }

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#502C8F"
     android:scrollbars="none"
     android:fillViewport="true">
     <LinearLayout
@@ -11,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <fragment
             android:name="com.example.mucsicapp.Fragment.Fragment_Playlist"
             android:id="@+id/fragmentplaylist"
