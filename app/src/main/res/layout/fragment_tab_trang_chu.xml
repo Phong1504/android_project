@@ -12,7 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
+        <ViewFlipper
+            android:id="@+id/myViewFlipper"
+            android:background="#502C8F"
+            android:layout_width="match_parent"
+            android:layout_height="180dp">
+        </ViewFlipper>
         <fragment
             android:name="com.example.mucsicapp.Fragment.Fragment_Playlist"
             android:id="@+id/fragmentplaylist"
@@ -55,8 +60,6 @@
             android:layout_height="wrap_content"
             tools:layout="@layout/fragment__bang_xep_hang">
         </fragment>
-
-
         <fragment
             android:name="com.example.mucsicapp.Fragment.Fragment_ThinhHanh"
             android:id="@+id/fragmentthinhhanh1"
@@ -85,8 +88,6 @@
             android:layout_height="wrap_content"
             tools:layout="@layout/fragment__bang_xep_hang">
         </fragment>
-
-
         <fragment
             android:name="com.example.mucsicapp.Fragment.Fragment_PhoBien"
             android:id="@+id/fragmentphobien2"
@@ -108,8 +109,6 @@
             android:layout_height="wrap_content"
             tools:layout="@layout/fragment__bang_xep_hang">
         </fragment>
-
-
         <fragment
             android:name="com.example.mucsicapp.Fragment.Fragment_PhoBien"
             android:id="@+id/fragmentphobien3"
@@ -131,8 +130,6 @@
             android:layout_height="wrap_content"
             tools:layout="@layout/fragment__bang_xep_hang">
         </fragment>
-
-
         <fragment
             android:name="com.example.mucsicapp.Fragment.Fragment_ThinhHanh"
             android:id="@+id/fragmentthinhhanh4"
