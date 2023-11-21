@@ -28,16 +28,19 @@ public class LayLaiMatKhauActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lay_lai_mat_khau);
 
+        //Ánh xạ
         email = (EditText) findViewById(R.id.et_taikhoanlaylaimatkhau);
         btnllmk = (Button) findViewById(R.id.btn_lay_lai_mat_khau);
         btnquaylai = (Button) findViewById(R.id.btn_lay_lai_mat_khau_back);
         fbaMusicApp = FirebaseAuth.getInstance();
+        //Xử lý bút Quay lại
         btnquaylai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
+        //Xử lý bút Lấy lại mật khẩu
         btnllmk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +49,7 @@ public class LayLaiMatKhauActivity extends AppCompatActivity {
                     Toast.makeText(getApplication(), "Vui lòng nhập email tài khoản của bạn.", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
+                //Xử lí hành động gửi đường link khôi phục mật khẩu với Firebase Authentication
                 fbaMusicApp.sendPasswordResetEmail(sEmail).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

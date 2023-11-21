@@ -23,7 +23,7 @@
         android:layout_below="@+id/icon_in_profile"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="M E L O D Y"
+        android:text="S P O T I F I R E"
         android:textColor="#ffffff"
         android:textSize="40sp"
         android:textStyle="bold" />

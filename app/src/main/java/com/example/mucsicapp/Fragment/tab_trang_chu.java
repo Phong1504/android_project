@@ -62,12 +62,9 @@ public class tab_trang_chu extends Fragment {
         viewFlipper.setAutoStart(true);
 
         Animation animation_slide_in = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_in_right);
-        Animation animation_slide_out = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_out_right);
-        Animation animation_slide_out_complete = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_out_left);
+        //Animation animation_slide_out = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_out_left);
 
-        viewFlipper.setInAnimation(animation_slide_out_complete);
         viewFlipper.setInAnimation(animation_slide_in);
-        viewFlipper.setInAnimation(animation_slide_out);
-
+        //viewFlipper.setInAnimation(animation_slide_out);
     }
 }
