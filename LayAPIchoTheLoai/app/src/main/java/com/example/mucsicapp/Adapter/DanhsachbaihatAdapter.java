@@ -40,8 +40,6 @@ public class DanhsachbaihatAdapter extends RecyclerView.Adapter<DanhsachbaihatAd
         holder.tvcasi.setText(baihat.getCasi());
         holder.tvindex.setText(position + 1 + "");
         holder.tvtenbaihat.setText(baihat.getTenBaihat());
-
-
     }
 
     @Override
@@ -54,9 +52,9 @@ public class DanhsachbaihatAdapter extends RecyclerView.Adapter<DanhsachbaihatAd
     ImageView imgluotthich;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvcasi = itemView.findViewById(R.id.tvTencasi);
+            tvcasi = itemView.findViewById(R.id.tv_tencasi);
             tvindex = itemView.findViewById(R.id.tv_danhsachindex);
-            tvtenbaihat  =itemView.findViewById(R.id.tv_tenbaihat);
+            tvtenbaihat = itemView.findViewById(R.id.tv_tenbaihat);
             imgluotthich = itemView.findViewById(R.id.imagluotthich);
         }
     }

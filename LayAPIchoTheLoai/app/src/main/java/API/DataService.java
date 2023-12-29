@@ -29,11 +29,11 @@ public interface DataService {
     Call<List<Baihat>> GetBaihatHot();
 
     @FormUrlEncoded
-    @POST("dsbaihattest.php")
-    Call<List<Baihat>> GetDsbaihatquangcao(@Field("idQuangcao") String idQuangcao);
+    @POST("danhsachbaihat.php")
+    Call<List<Baihat>> GetDsbaihatquangcao(@Field("idquangcao") String idquangcao);
 
     @FormUrlEncoded
-    @POST("dsbaihattest.php")
+    @POST("danhsachbaihat.php")
     Call<List<Baihat>> GetDanhsachtheotheloai(@Field("idtheloai") String idtheloai);
 
 }

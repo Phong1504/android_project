@@ -17,7 +17,7 @@
             <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:id="@+id/colappsingtollbar"
                 android:layout_width="match_parent"
-                android:layout_height="310dp"
+                android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
                 app:expandedTitleGravity="center|bottom"
                 app:expandedTitleMarginBottom="33dp"
@@ -25,8 +25,7 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                </View>
+                    android:layout_height="match_parent"/>
 
                 <androidx.appcompat.widget.Toolbar
 
@@ -45,12 +44,9 @@
                     android:layout_height="200dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="40dp"
-                    android:layout_marginBottom="40dp">
-
-                </ImageView>
+                    android:layout_marginBottom="40dp"/>
             </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
-
         <com.google.android.material.floatingactionbutton.FloatingActionButton
 
             android:backgroundTint="#D8C57F93"
@@ -62,9 +58,9 @@
             app:layout_anchor="@id/appbarlayout"
             app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:contentDescription=" "/>
 
-        </com.google.android.material.floatingactionbutton.FloatingActionButton>
             <androidx.core.widget.NestedScrollView
                 android:layout_marginTop="30dp"
 
@@ -75,7 +71,6 @@
                     android:id="@+id/recycledanhsachbaihat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-
                 </androidx.recyclerview.widget.RecyclerView>
             </androidx.core.widget.NestedScrollView>
 

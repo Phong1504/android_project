@@ -57,6 +57,7 @@ public class BannerAdapter extends PagerAdapter {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Toast.makeText(context, "Lolo", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context, DanhsachBaihatActivity.class);
                 intent.putExtra("banner", arrayListBanner.get(position));
                 context.startActivity(intent);

@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.mucsicapp.Adapter.DanhsachbaihatAdapter;
 import com.example.mucsicapp.Model.Baihat;
@@ -25,6 +26,7 @@ import com.example.mucsicapp.R;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.RequestCreator;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -48,8 +50,8 @@ public class DanhsachBaihatActivity extends AppCompatActivity {
         FloatingActionButton floatingActionButton;
         QuangCao quangCao;
         TheLoai theloai;
-    ArrayList<Baihat> mangbaihat;
-    DanhsachbaihatAdapter danhsachbaihatAdapter;
+        ArrayList<Baihat> mangbaihat;
+        DanhsachbaihatAdapter danhsachbaihatAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,6 +108,7 @@ public class DanhsachBaihatActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Baihat>> call, Throwable t) {
+                //Log.e("GetDsbaihatquangcao", "Request failed: " + t.getMessage());
             }
         });
     }
@@ -113,19 +116,38 @@ public class DanhsachBaihatActivity extends AppCompatActivity {
     private void setValueInView(String ten, String hinh) {
         if (collapsingToolbarLayout != null && imgdsbaihat != null) {
             collapsingToolbarLayout.setTitle(ten);
+
+            // Tạo một RequestCreator bằng cách sử dụng Picasso
+            RequestCreator requestCreator = Picasso.get().load(hinh);
+            // Xử lý lỗi khi tải hình ảnh
+            requestCreator.error(R.drawable.bg2).into(imgdsbaihat);
             try {
+                // Lấy một URL từ String
                 URL url = new URL(hinh);
-                Bitmap bitmap = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-                BitmapDrawable bitmapDrawable = new BitmapDrawable(getResources(), bitmap);
-                collapsingToolbarLayout.setBackground(bitmapDrawable);
+                // Tạo luồng để tải hình ảnh từ URL và set vào backdrop của collapsing toolbar
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Bitmap bitmap = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+                            final BitmapDrawable bitmapDrawable = new BitmapDrawable(getResources(), bitmap);
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    collapsingToolbarLayout.setBackground(bitmapDrawable);
+                                }
+                            });
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }).start();
             } catch (MalformedURLException e) {
-                throw new RuntimeException(e);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
             }
-            Picasso.get().load(hinh).into(imgdsbaihat);
         }
     }
+
 
 
     private void inIT() {
@@ -153,12 +175,13 @@ public class DanhsachBaihatActivity extends AppCompatActivity {
 
     private void DataIntent() {
         Intent intent = getIntent();
-        if (intent!=null){
+        if (intent != null){
             if (intent.hasExtra("banner")){
-            quangCao = (QuangCao) intent.getSerializableExtra("banner");
+                quangCao = (QuangCao) intent.getSerializableExtra("banner");
+                Toast.makeText(this, quangCao.getTenBaiHat(), Toast.LENGTH_SHORT).show();
             }
 
-            if (intent.hasExtra("idtheloai")){
+            else if (intent.hasExtra("idtheloai")){
                 theloai = (TheLoai) intent.getSerializableExtra("idtheloai");
             }
         }
