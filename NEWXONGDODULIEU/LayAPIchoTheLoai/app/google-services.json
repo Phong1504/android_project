@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "847934685537",
+    "project_id": "dangky-dangnhap-musicapp",
+    "storage_bucket": "dangky-dangnhap-musicapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:847934685537:android:a4c934c1e6c745953b4520",
+        "android_client_info": {
+          "package_name": "com.example.mucsicapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8QYhnO2rcrKj5TNe-naYlsi0Q_A4j7uw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
