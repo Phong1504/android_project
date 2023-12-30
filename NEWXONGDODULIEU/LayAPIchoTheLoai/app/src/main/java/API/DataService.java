@@ -36,4 +36,7 @@ public interface DataService {
     @POST("danhsachbaihat.php")
     Call<List<Baihat>> GetDanhsachtheotheloai(@Field("idtheloai") String idtheloai);
 
+    @FormUrlEncoded
+    @POST("searchbaihat.php")
+    Call<List<Baihat>> GetSearchBaiHat(@Field("tukhoa") String tukhoa)
 }
