@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="5dp"
+    android:layout_margin="5dp">
+    <RelativeLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:textSize="25sp"
+            android:text="1"
+            android:layout_margin="15dp"
+            android:id="@+id/tv_danhsachindex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_tenbaihat"
+            android:textSize="25sp"
+            android:text="Ten Ca Khuc"
+            android:textColor="#120F0F"
+            android:layout_toRightOf="@id/tv_danhsachindex"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:maxWidth="250dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:text="Ca si"
+            android:textColor="#756464"
+            android:textSize="17sp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_toRightOf="@id/tv_danhsachindex"
+            android:layout_below="@id/tv_tenbaihat"
+            android:id="@+id/tv_tencasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:src="@drawable/iconlove"
+            android:layout_margin="5dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:id="@+id/img_iconluotthich"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
