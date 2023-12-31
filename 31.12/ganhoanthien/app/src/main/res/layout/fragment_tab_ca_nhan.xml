@@ -7,22 +7,14 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_profile">
 
-    <ImageView
-        android:id="@+id/icon_in_profile"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="120dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/icon"
-        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/appname_in_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/icon_in_profile"
+        android:layout_below="@+id/email_nguoi_dung"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="90dp"
         android:text="S P O T I F I R E"
         android:textColor="#ffffff"
         android:textSize="40sp"
@@ -35,28 +27,56 @@
         android:layout_below="@+id/appname_in_profile"
         android:layout_marginTop="245dp"
         android:layout_marginLeft="145dp"
+        android:layout_centerHorizontal="true"
         android:text="ĐĂNG XUẤT"
         android:textColor="#ffffff"
         android:textSize="18sp"/>
 
-    <ImageView
-        android:id="@+id/icon_with_username"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/icon"
-        tools:srcCompat="@tools:sample/avatars" />
+    <TextView
+        android:id="@+id/user"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:text="User: "
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/email_nguoi_dung"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        android:textStyle="normal"
+        android:textSize="16sp"
+        android:textColor="#ffffff" />
 
 
     <TextView
-        android:id="@+id/ten_nguoi_dung"
+        android:id="@+id/id"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginStart="35dp"
         android:text="TextView"
-        android:textSize="26sp"
-        android:textColor="#ffffff" />
+        android:textStyle="normal"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:id="@+id/ID"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="45dp"
+        android:text="ID: "
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+
 
 </RelativeLayout>
