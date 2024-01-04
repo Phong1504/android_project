@@ -49,7 +49,6 @@ public class Fragment_Tim_Kiem extends Fragment {
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
         toolbar.setTitle("");
         setHasOptionsMenu(true);
-
         return view;
     }
 
@@ -78,18 +77,24 @@ public class Fragment_Tim_Kiem extends Fragment {
         Call<List<Baihat>> callback = dataService.GetSearchBaiHat(query);
         callback.enqueue(new Callback<List<Baihat>>() {
             @Override
-            public void onResponse(Call<List<Baihat>> call, Response<List<Baihat>> response) {
-                ArrayList<Baihat> mangbaihat = (ArrayList<Baihat>) response.body();
-                if (mangbaihat.size()>0){
-                    searchBaiHatAdapter=new SearchBaiHatAdapter(getActivity(), mangbaihat);
-                    LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
-                    recyclerViewsearchbaihat.setLayoutManager(linearLayoutManager);
-                    recyclerViewsearchbaihat.setAdapter(searchBaiHatAdapter);
-                    txtkhongcodulieu.setVisibility(View.GONE);
-                    recyclerViewsearchbaihat.setVisibility(View.VISIBLE);
-                }else {
+            public void onResponse(@NonNull Call<List<Baihat>> call, @NonNull Response<List<Baihat>>response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    ArrayList<Baihat> mangbaihat = (ArrayList<Baihat>) response.body();
+                    assert mangbaihat != null;
+                    if (mangbaihat.size() > 0) {
+                        searchBaiHatAdapter = new SearchBaiHatAdapter(getActivity(), mangbaihat);
+                        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+                        recyclerViewsearchbaihat.setLayoutManager(linearLayoutManager);
+                        recyclerViewsearchbaihat.setAdapter(searchBaiHatAdapter);
+                        txtkhongcodulieu.setVisibility(View.GONE);
+                        recyclerViewsearchbaihat.setVisibility(View.VISIBLE);
+                    } else {
                         recyclerViewsearchbaihat.setVisibility(View.GONE);
                         txtkhongcodulieu.setVisibility(View.VISIBLE);
+                    }
+                } else {
+                    recyclerViewsearchbaihat.setVisibility(View.GONE);
+                    txtkhongcodulieu.setVisibility(View.VISIBLE);
                 }
             }
 
