@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#282829"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/linearlayout_trangchu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <fragment
+            android:name="com.example.mucsicapp.Fragment.Fragment_Banner"
+            android:id="@+id/fragmentbanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <fragment
+            android:name="com.example.mucsicapp.Fragment.Fragment_ChuDe"
+            android:id="@+id/frgmentchudetheloai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <fragment
+            android:name="com.example.mucsicapp.Fragment.Fragment_Album"
+            android:id="@+id/fragmentalbum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <fragment
+        android:name="com.example.mucsicapp.Fragment.Fragment_Baihat"
+        android:id="@+id/fragmentbaihtat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>

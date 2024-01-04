@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/abc">
+
+
+    <TextView
+        android:id="@+id/appname_in_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/email_nguoi_dung"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:text="S P O T I F I R E"
+        android:textColor="#050505"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:backgroundTint="@color/black"
+        android:id="@+id/btn_dang_xuat"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/appname_in_profile"
+        android:layout_marginTop="245dp"
+        android:layout_marginLeft="145dp"
+        android:layout_centerHorizontal="true"
+        android:text="ĐĂNG XUẤT"
+        android:textColor="#ffffff"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/user"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="50dp"
+        android:text="User: "
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/email_nguoi_dung"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="50dp"
+        android:text="TextView"
+        android:textStyle="normal"
+        android:textSize="16sp"
+        android:textColor="#101010" />
+
+
+    <TextView
+        android:id="@+id/id"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:layout_marginStart="85dp"
+        android:text="TextView"
+        android:textStyle="normal"
+        android:textColor="#131212"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:id="@+id/ID"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="90dp"
+        android:text="ID: "
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+
+
+</RelativeLayout>
